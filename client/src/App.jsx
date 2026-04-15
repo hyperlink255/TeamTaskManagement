@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Routes, useLocation, useParams } from 'react-router-dom'
 import ProtectedRoute from './routes/ProtectRoutes'
-import Overview from './pages/dashboard/overview'
+import Overview from './pages/dashboard/Overview'
 import Boards from './pages/dashboard/Board'
 import Members from './pages/dashboard/Members'
 import Settings from './pages/dashboard/Settings'
