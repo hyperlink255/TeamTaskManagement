@@ -25,7 +25,7 @@ const startServer = async () => {
     // ✅ CORS FIX
     const allowedOrigins = [
       "http://localhost:5173",
-      "https://car-rental-fvw6.vercel.app"
+      "https://team-task-management-39jj.vercel.app"
     ]
 
     app.use(cors({
