@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+
+:root {
+  --bg-color: #f6f6f6;
+  --text-color: #111111;
+  --primary-color: #11B989;
+}
+
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+}
+
+*{
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease; 
+
+}
+
+
+
+.button {
+  background-color: var(--primary-color);
+}
+
+
+
+
+.form-input {
+  @apply w-full text-sm text-black outline-none bg-white border border-slate-100 px-2.5 py-3 rounded-md mt-2 placeholder:text-gray-500;
+}
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-trigger {
+  width: 30px;
+  height: 30px;
+  background: #e5d7d763;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-container:hover .menu-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu-item {
+  width: 30px;
+  height: 30px;
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.1);
+}
+
+.menu-item.delete {
+  background: #ef4444;
+}
