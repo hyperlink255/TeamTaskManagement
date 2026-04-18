@@ -63,7 +63,7 @@ const prepareChartData = (data) => {
   const handleDashBoardData = async () => {
     try {
       if (user.role === "admin") {
-        const res = await api.get('/dashboards/admin')
+        const res = await api.get('/api/dashboards/admin')
         prepareChartData(res.data)
         
         setDashboard(res.data)

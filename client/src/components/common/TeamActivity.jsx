@@ -8,7 +8,7 @@ const TeamActivity = () => {
   useEffect(() => {
       const handleUserData = async () => {
         try{
-          const res = await api.get('/users/all')
+          const res = await api.get('/api/users/all')
           if(res.status === 200){
             setUser(res.data.user)
           }

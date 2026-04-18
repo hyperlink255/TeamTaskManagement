@@ -4,7 +4,7 @@ import { api } from "../../services/axiosIntance";
 export const getHandleMember = createAsyncThunk('member/getHandleMember', 
     async (_,{rejectWithValue}) => {
         try{
-            const res = await api.get(`/members/member`)
+            const res = await api.get(`/api/members/member`)
             return res.data
         }catch(error){
             rejectWithValue(error.response?.data?.message || error.message)
@@ -14,7 +14,7 @@ export const getHandleMember = createAsyncThunk('member/getHandleMember',
 export const deleteHandleMember = createAsyncThunk('member/deleteHandleMember', 
     async ({userId},{rejectWithValue}) => {
         try{
-             await api.delete(`/members/member/${userId}`)
+             await api.delete(`/api/members/member/${userId}`)
             return userId
         }catch(error){
             rejectWithValue(error.response?.data?.message || error.message)

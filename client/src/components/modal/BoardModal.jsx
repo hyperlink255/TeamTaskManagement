@@ -21,7 +21,7 @@ const BoardModal = () => {
       e.preventDefault()
       try{
         if(boardId){
-          const res = await api.put(`/boards/${boardId}`,{
+          const res = await api.put(`/api/boards/${boardId}`,{
             title:boardForm.title,
             description:boardForm.description
           })
@@ -35,7 +35,7 @@ const BoardModal = () => {
             toast.error("Update Fail")
           }
         }else{
-          const res = await api.post("/boards", {
+          const res = await api.post("/api/boards", {
            title:boardForm.title,
            description:boardForm.description
           })

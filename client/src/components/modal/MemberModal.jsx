@@ -13,7 +13,7 @@ const MemberModal = ({ boardId }) => {
     const handleAddMember = async (e) => {
         e.preventDefault()
         try {
-            const res = await api.post(`/members/${boardId}/member`, {
+            const res = await api.post(`/api/members/${boardId}/member`, {
                 email: email
             })
             if (res.status === 200) {

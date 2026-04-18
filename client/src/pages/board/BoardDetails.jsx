@@ -16,7 +16,7 @@ const BoardDetails = () => {
 
   const handleBoardDetails = async () => {
     try {
-      const res = await api.get(`/boards/${id}`)
+      const res = await api.get(`/api/boards/${id}`)
       setBoardDetails(res.data.board)
     } catch (error) {
       toast(error.message)

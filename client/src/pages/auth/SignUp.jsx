@@ -44,7 +44,7 @@ const SignUp = () => {
                     newFormData.append('skills', skill)
                 })
                 
-                const res = await api.post('/users/register', newFormData)
+                const res = await api.post('/api/users/register', newFormData)
                 if (res.status === 201) {
                     toast(res.data.message)
                     dispatch(addName(res.data.user))
@@ -61,7 +61,7 @@ const SignUp = () => {
                     toast.error(res.data.message)
                 }
             } else {
-                const res = await api.post('/users/login', {
+                const res = await api.post('/api/users/login', {
                     email: formData.email,
                     password: formData.password
                 })

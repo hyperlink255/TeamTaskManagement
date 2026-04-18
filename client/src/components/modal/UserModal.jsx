@@ -21,7 +21,7 @@ const UserModal = () => {
 
     const handleMembersDetails = async () => {
         try {
-            const res = await api.get(`/members/member/${id}`)
+            const res = await api.get(`/api/members/member/${id}`)
             if (res.status === 200) {
                 setMembers(res.data.member)
             }
@@ -32,7 +32,6 @@ const UserModal = () => {
     useEffect(() => {
         handleMembersDetails()
     }, [id])
-    console.log(member);
 
 
     return (

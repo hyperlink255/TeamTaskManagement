@@ -4,7 +4,7 @@ import { api } from "../../services/axiosIntance";
 export const getBoardData = createAsyncThunk('board/getBoardData',
     async ({search}, {rejectWithValue}) => {
         try{
-          const res = await api.get(`/boards?search=${search}`)          
+          const res = await api.get(`/api/boards?search=${search}`)          
           return res.data
         }catch(error){
           return rejectWithValue(error.response?.data?.message || error.message);
@@ -14,7 +14,7 @@ export const getBoardData = createAsyncThunk('board/getBoardData',
 export const deleteBoard = createAsyncThunk('board/deleteBoard',
     async ({_id}, {rejectWithValue}) => {
         try{
-         await api.delete(`/boards/${_id}`)
+         await api.delete(`/api/boards/${_id}`)
          return _id
         }catch(error){
           return rejectWithValue(error.response?.data?.message || error.message);

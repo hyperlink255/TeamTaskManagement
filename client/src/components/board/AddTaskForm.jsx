@@ -51,7 +51,7 @@ const AddTaskForm = ({activeColumn}) => {
        dispatch(setToggle(5))
 
     } else {
-      const res = await api.post(`/lists/${id}`,taskdata)
+      const res = await api.post(`/api/lists/${id}`,taskdata)
       if(res.status === 201){
         toast.success(res.data.message)
         dispatch(clearEditTask())   

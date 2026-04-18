@@ -4,7 +4,7 @@ import { api } from '../../services/axiosIntance'
 export const handleTask = createAsyncThunk('list/handleTask',
     async ({ boardId }, { rejectWithValue }) => {
         try {
-            const res = await api.get(`/lists/${boardId}`)
+            const res = await api.get(`/api/lists/${boardId}`)
             return res.data
         } catch (error) {
             rejectWithValue(error.response?.data?.message || error.message)
@@ -14,7 +14,7 @@ export const handleTask = createAsyncThunk('list/handleTask',
 export const handleUpdateTask = createAsyncThunk('list/handleUpdateTask',
     async ({ boardId, id, taskdata }, { rejectWithValue }) => {
         try {
-            const res = await api.put(`/lists/${boardId}/${id}`, taskdata)
+            const res = await api.put(`/api/lists/${boardId}/${id}`, taskdata)
             return res.data
         } catch (error) {
             rejectWithValue(error.response?.data?.message || error.message)
@@ -24,7 +24,7 @@ export const handleUpdateTask = createAsyncThunk('list/handleUpdateTask',
 export const handledeleteTask = createAsyncThunk('list/handledeleteTask',
     async ({ boardId, id }, { rejectWithValue }) => {
         try {
-            await api.delete(`/lists/${boardId}/${id}`)
+            await api.delete(`/api/lists/${boardId}/${id}`)
             return id
         } catch (error) {
             rejectWithValue(error.response?.data?.message || error.message)

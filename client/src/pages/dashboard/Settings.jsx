@@ -25,7 +25,7 @@ const Settings = () => {
     formData.append('name', update.name)
     formData.append('image', update.image)
     try{
-       const res = await api.put('/users/update',formData)
+       const res = await api.put('/api/users/update',formData)
        if(res.status === 200) {
         toast.success(res.data.message)
         dispatch(addName(res.data.user))
